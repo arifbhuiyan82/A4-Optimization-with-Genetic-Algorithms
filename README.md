@@ -83,25 +83,27 @@ TARGET: 440.0
 MAX_GENERATIONS: 600
 
 Chromosome Representation: The chromosome represents a possible route for the salesman to visit each city exactly once and return to the starting city. Each gene in the chromosome corresponds to a city, and the order of genes represents the sequence in which the cities are visited.
-
-Selection: Two selection techniques are implemented-
+Selection: Two selection techniques are implemented:
 
 Tournament Selection: This method randomly selects a specified number of individuals (determined by TOURNAMENT_SELECTION_SIZE) from the population and chooses the fittest one among them.
 
+Roulette Wheel Selection: This method selects individuals based on their fitness proportionate probability. Fitter individuals have a higher chance of being selected.
 Elitism: The two fittest individuals from the previous generation are automatically included in the next generation without undergoing crossover or mutation.
 
-Crossover: Two crossover techniques are implemented-
+Crossover: Two crossover techniques are implemented:
 
 Partially Mapped Crossover (PMX): This method randomly selects a segment from one parent and maps it to the corresponding segment in the other parent. The remaining genes are then filled based on the mapping.
 
 Order Crossover (OX): This technique randomly selects a segment from one parent and copies it to the child. The remaining genes are filled in the order they appear in the other parent, excluding duplicates.
 
-Mutation: Two mutation techniques are implemented-
+Mutation: Two mutation techniques are implemented:
 
 Swap Mutation: This method randomly selects two positions in the chromosome and swaps the cities at those positions.
 
 Inversion Mutation: This technique randomly selects a segment of the chromosome and reverses the order of cities in that segment.
 
-Population Size: We will explore six different parameter sets, each with a unique population size - 150, 250, 180, 200, 420, and 500. The choice of population size is crucial as it affects the trade-off between exploration and convergence. Larger populations increase diversity and exploration, while smaller populations accelerate convergence. Adjustments in population sizes within the specified range allow for the exploration of different trade-offs between exploration and convergence speed.
+Population Size: The choice of population size is crucial as it affects the trade-off between exploration and convergence. Larger populations increase diversity and exploration, while smaller populations accelerate convergence. Adjustments in population sizes within the specified range allow for the exploration of different trade-offs between exploration and convergence speed.
 
 Identifying Stationary State: The stationary state is identified by monitoring the distance of the fittest individual over generations. If the distance does not significantly improve over several generations, the system can be considered in a stationary state. The maximum number of generations allowed for each parameter set is indicated accordingly.
+
+User Input for TSP File: The user is prompted to select one of the available TSP files (it9.tsp, Qatar194.tsp, or WesternSahara29.tsp). If an invalid choice is made, the user is asked to try again until a valid selection is made.
